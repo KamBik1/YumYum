@@ -8,12 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		8EDCA6E92C4D5690006E1002 /* YumYumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA6E82C4D5690006E1002 /* YumYumApp.swift */; };
-		8EDCA6EB2C4D5690006E1002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA6EA2C4D5690006E1002 /* ContentView.swift */; };
+		8EDCA6EB2C4D5690006E1002 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA6EA2C4D5690006E1002 /* LoginView.swift */; };
 		8EDCA6ED2C4D5692006E1002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDCA6EC2C4D5692006E1002 /* Assets.xcassets */; };
 		8EDCA6F02C4D5692006E1002 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDCA6EF2C4D5692006E1002 /* Preview Assets.xcassets */; };
 		8EDCA6FA2C4D5692006E1002 /* YumYumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA6F92C4D5692006E1002 /* YumYumTests.swift */; };
 		8EDCA7042C4D5692006E1002 /* YumYumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA7032C4D5692006E1002 /* YumYumUITests.swift */; };
 		8EDCA7062C4D5692006E1002 /* YumYumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA7052C4D5692006E1002 /* YumYumUITestsLaunchTests.swift */; };
+		8EDCA7142C4D6864006E1002 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA7132C4D6864006E1002 /* Modifiers.swift */; };
+		8EDCA71D2C4DB4AF006E1002 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA71C2C4DB4AF006E1002 /* Extensions.swift */; };
+		8EDCA71F2C4EF522006E1002 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA71E2C4EF522006E1002 /* LoginViewModel.swift */; };
+		8EDCA7212C503B12006E1002 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EDCA7202C503B12006E1002 /* GoogleService-Info.plist */; };
+		8EDCA7242C503E24006E1002 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDCA7232C503E24006E1002 /* FirebaseAuth */; };
+		8EDCA7262C503E24006E1002 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDCA7252C503E24006E1002 /* FirebaseAuthCombine-Community */; };
+		8EDCA7282C503E24006E1002 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDCA7272C503E24006E1002 /* FirebaseDatabase */; };
+		8EDCA72A2C503E24006E1002 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDCA7292C503E24006E1002 /* FirebaseDatabaseSwift */; };
+		8EDCA72C2C503E24006E1002 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDCA72B2C503E24006E1002 /* FirebaseFirestore */; };
+		8EDCA72E2C503E24006E1002 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDCA72D2C503E24006E1002 /* FirebaseFirestoreCombine-Community */; };
+		8EDCA7302C503E24006E1002 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDCA72F2C503E24006E1002 /* FirebaseFirestoreSwift */; };
+		8EDCA7322C503E24006E1002 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDCA7312C503E24006E1002 /* FirebaseStorage */; };
+		8EDCA7342C503E24006E1002 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDCA7332C503E24006E1002 /* FirebaseStorageCombine-Community */; };
+		8EDCA7362C5046B1006E1002 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA7352C5046B1006E1002 /* User.swift */; };
+		8EDCA7392C504780006E1002 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA7382C504780006E1002 /* FirebaseManager.swift */; };
+		8EDCA73C2C514F3E006E1002 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA73B2C514F3D006E1002 /* DataManager.swift */; };
+		8EDCA73E2C515B94006E1002 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA73D2C515B94006E1002 /* HomeView.swift */; };
+		8EDCA7402C5197E1006E1002 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCA73F2C5197E1006E1002 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +54,7 @@
 /* Begin PBXFileReference section */
 		8EDCA6E52C4D5690006E1002 /* YumYum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumYum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDCA6E82C4D5690006E1002 /* YumYumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumYumApp.swift; sourceTree = "<group>"; };
-		8EDCA6EA2C4D5690006E1002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8EDCA6EA2C4D5690006E1002 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8EDCA6EC2C4D5692006E1002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EDCA6EF2C4D5692006E1002 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8EDCA6F52C4D5692006E1002 /* YumYumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YumYumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +62,15 @@
 		8EDCA6FF2C4D5692006E1002 /* YumYumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YumYumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDCA7032C4D5692006E1002 /* YumYumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumYumUITests.swift; sourceTree = "<group>"; };
 		8EDCA7052C4D5692006E1002 /* YumYumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumYumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8EDCA7132C4D6864006E1002 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		8EDCA71C2C4DB4AF006E1002 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8EDCA71E2C4EF522006E1002 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8EDCA7202C503B12006E1002 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8EDCA7352C5046B1006E1002 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8EDCA7382C504780006E1002 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		8EDCA73B2C514F3D006E1002 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		8EDCA73D2C515B94006E1002 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8EDCA73F2C5197E1006E1002 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +78,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EDCA72A2C503E24006E1002 /* FirebaseDatabaseSwift in Frameworks */,
+				8EDCA7282C503E24006E1002 /* FirebaseDatabase in Frameworks */,
+				8EDCA7242C503E24006E1002 /* FirebaseAuth in Frameworks */,
+				8EDCA7302C503E24006E1002 /* FirebaseFirestoreSwift in Frameworks */,
+				8EDCA72E2C503E24006E1002 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				8EDCA7322C503E24006E1002 /* FirebaseStorage in Frameworks */,
+				8EDCA72C2C503E24006E1002 /* FirebaseFirestore in Frameworks */,
+				8EDCA7342C503E24006E1002 /* FirebaseStorageCombine-Community in Frameworks */,
+				8EDCA7262C503E24006E1002 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +130,16 @@
 		8EDCA6E72C4D5690006E1002 /* YumYum */ = {
 			isa = PBXGroup;
 			children = (
-				8EDCA6E82C4D5690006E1002 /* YumYumApp.swift */,
-				8EDCA6EA2C4D5690006E1002 /* ContentView.swift */,
-				8EDCA6EC2C4D5692006E1002 /* Assets.xcassets */,
+				8EDCA7172C4D8B44006E1002 /* SystemFiles */,
+				8EDCA7122C4D67C4006E1002 /* Modifiers */,
+				8EDCA71B2C4DB482006E1002 /* ExtensionsForView */,
+				8EDCA73A2C514F22006E1002 /* DataManager */,
+				8EDCA7372C504728006E1002 /* FirebaseManager */,
+				8EDCA71A2C4DAA78006E1002 /* Models */,
+				8EDCA7182C4DAA1C006E1002 /* Views */,
+				8EDCA7192C4DAA4C006E1002 /* ViewModels */,
 				8EDCA6EE2C4D5692006E1002 /* Preview Content */,
+				8EDCA7202C503B12006E1002 /* GoogleService-Info.plist */,
 			);
 			path = YumYum;
 			sourceTree = "<group>";
@@ -127,6 +169,73 @@
 			path = YumYumUITests;
 			sourceTree = "<group>";
 		};
+		8EDCA7122C4D67C4006E1002 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				8EDCA7132C4D6864006E1002 /* Modifiers.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		8EDCA7172C4D8B44006E1002 /* SystemFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8EDCA6E82C4D5690006E1002 /* YumYumApp.swift */,
+				8EDCA6EC2C4D5692006E1002 /* Assets.xcassets */,
+			);
+			path = SystemFiles;
+			sourceTree = "<group>";
+		};
+		8EDCA7182C4DAA1C006E1002 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8EDCA6EA2C4D5690006E1002 /* LoginView.swift */,
+				8EDCA73D2C515B94006E1002 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8EDCA7192C4DAA4C006E1002 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8EDCA71E2C4EF522006E1002 /* LoginViewModel.swift */,
+				8EDCA73F2C5197E1006E1002 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8EDCA71A2C4DAA78006E1002 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8EDCA7352C5046B1006E1002 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8EDCA71B2C4DB482006E1002 /* ExtensionsForView */ = {
+			isa = PBXGroup;
+			children = (
+				8EDCA71C2C4DB4AF006E1002 /* Extensions.swift */,
+			);
+			path = ExtensionsForView;
+			sourceTree = "<group>";
+		};
+		8EDCA7372C504728006E1002 /* FirebaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				8EDCA7382C504780006E1002 /* FirebaseManager.swift */,
+			);
+			path = FirebaseManager;
+			sourceTree = "<group>";
+		};
+		8EDCA73A2C514F22006E1002 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8EDCA73B2C514F3D006E1002 /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +252,17 @@
 			dependencies = (
 			);
 			name = YumYum;
+			packageProductDependencies = (
+				8EDCA7232C503E24006E1002 /* FirebaseAuth */,
+				8EDCA7252C503E24006E1002 /* FirebaseAuthCombine-Community */,
+				8EDCA7272C503E24006E1002 /* FirebaseDatabase */,
+				8EDCA7292C503E24006E1002 /* FirebaseDatabaseSwift */,
+				8EDCA72B2C503E24006E1002 /* FirebaseFirestore */,
+				8EDCA72D2C503E24006E1002 /* FirebaseFirestoreCombine-Community */,
+				8EDCA72F2C503E24006E1002 /* FirebaseFirestoreSwift */,
+				8EDCA7312C503E24006E1002 /* FirebaseStorage */,
+				8EDCA7332C503E24006E1002 /* FirebaseStorageCombine-Community */,
+			);
 			productName = YumYum;
 			productReference = 8EDCA6E52C4D5690006E1002 /* YumYum.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +335,9 @@
 				Base,
 			);
 			mainGroup = 8EDCA6DC2C4D5690006E1002;
+			packageReferences = (
+				8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8EDCA6E62C4D5690006E1002 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +356,7 @@
 			files = (
 				8EDCA6F02C4D5692006E1002 /* Preview Assets.xcassets in Resources */,
 				8EDCA6ED2C4D5692006E1002 /* Assets.xcassets in Resources */,
+				8EDCA7212C503B12006E1002 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +381,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EDCA6EB2C4D5690006E1002 /* ContentView.swift in Sources */,
+				8EDCA73E2C515B94006E1002 /* HomeView.swift in Sources */,
+				8EDCA71D2C4DB4AF006E1002 /* Extensions.swift in Sources */,
+				8EDCA73C2C514F3E006E1002 /* DataManager.swift in Sources */,
+				8EDCA7402C5197E1006E1002 /* HomeViewModel.swift in Sources */,
+				8EDCA6EB2C4D5690006E1002 /* LoginView.swift in Sources */,
+				8EDCA7392C504780006E1002 /* FirebaseManager.swift in Sources */,
+				8EDCA7362C5046B1006E1002 /* User.swift in Sources */,
 				8EDCA6E92C4D5690006E1002 /* YumYumApp.swift in Sources */,
+				8EDCA71F2C4EF522006E1002 /* LoginViewModel.swift in Sources */,
+				8EDCA7142C4D6864006E1002 /* Modifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +536,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -425,11 +557,13 @@
 				DEVELOPMENT_TEAM = PRBS29X52L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Yum Yum";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,9 +571,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Home.YumYum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,11 +592,13 @@
 				DEVELOPMENT_TEAM = PRBS29X52L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Yum Yum";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,9 +606,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Home.YumYum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -588,6 +732,65 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8EDCA7232C503E24006E1002 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8EDCA7252C503E24006E1002 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		8EDCA7272C503E24006E1002 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		8EDCA7292C503E24006E1002 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		8EDCA72B2C503E24006E1002 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8EDCA72D2C503E24006E1002 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		8EDCA72F2C503E24006E1002 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		8EDCA7312C503E24006E1002 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		8EDCA7332C503E24006E1002 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EDCA7222C503E24006E1002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8EDCA6DD2C4D5690006E1002 /* Project object */;
 }
