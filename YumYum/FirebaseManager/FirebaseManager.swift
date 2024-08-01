@@ -14,9 +14,7 @@ protocol FirebaseManagerProtocol {
     func signUp(email: String, password: String) -> Future<User, Error>
     func login(email: String, password: String) -> Future<User, Error>
     func signOut() -> AnyPublisher<Void, Error>
-    
-    //Удалить
-    func authCheck(complition: @escaping (User) -> ())
+    func passwordReset(email: String) -> Future<Void, Error>
 }
 
 final class FirebaseManager: FirebaseManagerProtocol, ObservableObject {
@@ -37,6 +35,7 @@ final class FirebaseManager: FirebaseManagerProtocol, ObservableObject {
             self?.isUserRegistered = user != nil
         }
     }
+    
     
     // Определяем метод для Sign Up
     func signUp(email: String, password: String) -> Future<User, Error> {
@@ -77,19 +76,18 @@ final class FirebaseManager: FirebaseManagerProtocol, ObservableObject {
         .eraseToAnyPublisher()
     }
     
-    
-    
-    // Удалить!
-    func authCheck(complition: @escaping (User) -> ()) {
-        Auth.auth().addStateDidChangeListener { _, user in
-            let myUser = User(email: user?.email, uid: user?.uid)
-            complition(myUser)
+    // Определяем метод для Password Reset
+    func passwordReset(email: String) -> Future<Void, Error> {
+        Future<Void, Error> { promise in
+            Auth.auth().sendPasswordReset(withEmail: email) { error in
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(()))
+                }
+            }
         }
     }
-    
-    
-  
-    
     
     deinit {
         // Удаляем слушатель состояния аутентификации при деинициализации
@@ -97,6 +95,4 @@ final class FirebaseManager: FirebaseManagerProtocol, ObservableObject {
             Auth.auth().removeStateDidChangeListener(handle)
         }
     }
-    
-    
 }

@@ -24,7 +24,6 @@ struct YumYumApp: App {
     var body: some Scene {
         WindowGroup {
             LoginView()
-                //.environment(\.colorScheme, .dark)
         }
     }
 }

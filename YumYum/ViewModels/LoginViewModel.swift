@@ -104,7 +104,6 @@ final class LoginViewModel: ObservableObject {
                     self?.signUpErrorMessage = SignUpError.success.rawValue
                     self?.dataManager.saveUser(user: user)
                     self?.isUserRegistered = true
-                    print("Sign Up \(user)")
                 }
                 .store(in: &cancellables)
         }
@@ -125,10 +124,30 @@ final class LoginViewModel: ObservableObject {
             } receiveValue: { [weak self] user in
                 self?.dataManager.saveUser(user: user)
                 self?.isUserRegistered = true
-                print("Login \(user)")
             }
             .store(in: &cancellables)
     }
     
     
+    // Забыл пароль (Forgot Password)
+    func forgotPassword(email: String) {
+        loginErrorMessage = ""
+        guard !email.isEmpty else {
+            loginErrorMessage = "Email cannot be empty."
+            return
+        }
+        firebaseManager.passwordReset(email: email)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.loginErrorMessage = error.localizedDescription
+                case .finished:
+                    break
+                }
+            } receiveValue: { [weak self] _ in
+                self?.loginErrorMessage = "The password recovery letter was sent to your email."
+            }
+            .store(in: &cancellables)
+    }
 }

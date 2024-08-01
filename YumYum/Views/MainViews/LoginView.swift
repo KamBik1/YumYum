@@ -7,13 +7,15 @@
 
 import SwiftUI
 
+// Логин экран
 struct LoginView: View {
    
     @State private var loginIsSelected: Bool = true
     @State private var signUpIsSelected: Bool = false
+    @State private var isForgotPasswordTapped: Bool = false
     
-    @State private var loginEmail: String = "test@gmail.com"
-    @State private var loginPassword: String = "Aa123456"
+    @State private var loginEmail: String = ""
+    @State private var loginPassword: String = ""
     
     @State private var signUpEmail: String = ""
     @State private var signUpPassword: String = ""
@@ -23,54 +25,52 @@ struct LoginView: View {
     
     var body: some View {
         
-        NavigationStack {
-            ZStack {
-                BackgroundView()
-                
-                VStack {
-                    WelcomeText()
-                        .padding(.top, 40)
-                    LoginSelectionButtons(loginIsSelected: $loginIsSelected, signUpIsSelected: $signUpIsSelected)
+        ZStack {
+            BackgroundView()
+            
+            VStack {
+                WelcomeText()
+                    .padding(.top, 40)
+                LoginSelectionButtons(loginIsSelected: $loginIsSelected, signUpIsSelected: $signUpIsSelected)
+                    .padding(.top, 20)
+                    .padding(.bottom, 20)
+                if loginIsSelected {
+                    LoginTextFields(email: $loginEmail, password: $loginPassword)
+                    LoginButton(email: $loginEmail, password: $loginPassword, viewModel: viewModel)
+                    ForgotPasswordButton(isForgotPasswordTapped: $isForgotPasswordTapped)
                         .padding(.top, 20)
-                        .padding(.bottom, 20)
-                    if loginIsSelected {
-                        LoginTextFields(email: $loginEmail, password: $loginPassword)
-                        LoginButton(email: $loginEmail, password: $loginPassword, viewModel: viewModel)
-                            .navigationDestination(isPresented: $viewModel.isUserRegistered) {
-                                HomeView()
-                            }
-                        ForgotPassword()
-                            .padding(.top, 20)
-                        InfoText(infoText: $viewModel.loginErrorMessage)
-                            .padding(.top, 20)
-                    } else {
-                        SignUpTextFields(email: $signUpEmail, password: $signUpPassword, confirmPassword: $signUpConfirmPassword)
-                        SignUpButton(email: $signUpEmail, password: $signUpPassword, confirmPassword: $signUpConfirmPassword, viewModel: viewModel)
-                            .navigationDestination(isPresented: $viewModel.isUserRegistered) {
-                                HomeView()
-                            }
-                        InfoText(infoText: $viewModel.signUpErrorMessage)
-                            .padding(.top, 20)
-                    }
-                    Spacer()
+                    InfoText(infoText: $viewModel.loginErrorMessage)
+                        .padding(.top, 20)
+                } else {
+                    SignUpTextFields(email: $signUpEmail, password: $signUpPassword, confirmPassword: $signUpConfirmPassword)
+                    SignUpButton(email: $signUpEmail, password: $signUpPassword, confirmPassword: $signUpConfirmPassword, viewModel: viewModel)
+                    InfoText(infoText: $viewModel.signUpErrorMessage)
+                        .padding(.top, 20)
                 }
-                .padding()
+                Spacer()
             }
-            .hideKeyboardOnTap()
+            .padding()
+        }
+        .onChange(of: viewModel.isUserRegistered) {
+            loginIsSelected = true
+            signUpIsSelected = false
+            loginEmail = ""
+            loginPassword = ""
+            signUpEmail = ""
+            signUpPassword = ""
+            signUpConfirmPassword = ""
+        }
+        .hideKeyboardOnTap()
+        .fullScreenCover(isPresented: $viewModel.isUserRegistered) {
+            CustomTabView()
+        }
+        .sheet(isPresented: $isForgotPasswordTapped) {
+            ForgotPasswordView(isForgotPasswordTapped: $isForgotPasswordTapped, viewModel: viewModel)
+                .presentationDragIndicator(.visible)
         }
     }
 }
 
-
-struct BackgroundView: View {
-    
-    var body: some View {
-        Rectangle()
-            .fill(Color(.yumBackground))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .ignoresSafeArea()
-    }
-}
 
 struct WelcomeText: View {
     
@@ -158,7 +158,6 @@ struct LoginTextFields: View {
 
 struct SignUpTextFields: View {
     
-   
     @Binding var email: String
     @Binding var password: String
     @Binding var confirmPassword: String
@@ -244,11 +243,13 @@ struct SignUpButton: View {
 }
 
 
-struct ForgotPassword: View {
+struct ForgotPasswordButton: View {
+    
+    @Binding var isForgotPasswordTapped: Bool
     
     var body: some View {
         Button {
-            print("ForgotPassword")
+            isForgotPasswordTapped = true
         } label: {
             Text("Forgot Password?")
                 .tint(.yumPurple)
@@ -271,7 +272,68 @@ struct InfoText: View {
 }
 
 
+// Экран восстановления пароля
+struct ForgotPasswordView: View {
+    
+    @State private var email: String = ""
+    
+    @Binding var isForgotPasswordTapped: Bool
+    
+    @FocusState private var isFocused: Bool
+    
+    @ObservedObject var viewModel: LoginViewModel
+    
+    var body: some View {
+        ZStack {
+            BackgroundView()
+            
+            VStack {
+                Text("Forgot your password")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .font(.system(size: 22))
+                    .foregroundColor(.yumText)
+                    .padding(.top, 15)
+                
+                TextField("Email", text: $email)
+                    .frame(height: 30)
+                    .keyboardType(.emailAddress)
+                    .focused($isFocused)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                    .innerShadowsStyle()
+                    .padding(.top, 15)
+                
+                Text("We will send you an email with a password reset link")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(.yumText)
+                
+                Button {
+                    viewModel.forgotPassword(email: email)
+                    isForgotPasswordTapped = false
+                } label: {
+                    Text("Send reset email")
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 30)
+                        .font(.system(size: 20))
+                        .tint(.yumBackground)
+                        
+                }
+                .padding()
+                .background(.yumPurple)
+                .cornerRadius(20)
+                
+                Spacer()
+            }
+            .padding()
+            .onAppear {
+                isFocused = true
+            }
+        }
+    }
+}
+
+
 
 //#Preview {
-//    ContentView()
+//    LoginView()
 //}
